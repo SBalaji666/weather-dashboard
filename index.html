@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./asset/css/style.css" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"
+    ></script>
+    <script defer src="./asset/js/script.js"></script>
+    <title>Weather Dashboard</title>
+  </head>
+  <body>
+    <div class="layout">
+      <div class="layout_container">
+        <!-- Layout sidebar -->
+        <div class="layout__sidebar">
+          <div class="layout__sidebar-top">
+            <button class="layout__sidebar-top-btn">
+              <span class="material-icons-outlined"> add </span>
+            </button>
+            <div class="layout__sidebar-dots">
+              <div class="dot active"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+            <div class="layout_sidebar-theme">
+              <span>°C</span>
+              <div class="layout_sidebar-theme-mode">
+                <div class="layout_sidebar-theme-mode-dot"></div>
+              </div>
+              <span>°F</span>
+            </div>
+          </div>
+          <div class="layout__sidebar-weather">
+            <div class="layout__sidebar-weather-details">
+              <p class="layout__sidebar-city">
+                <span class="material-icons-outlined"> send </span>
+                New York, USA
+              </p>
+              <div>
+                <span class="material-icons-outlined"> wb_twilight </span>
+                <span class="layout__sidebar-time">07:19</span>
+              </div>
+            </div>
+            <div class="layout__sidebar-weather-details">
+              <p class="layout__sidebar-date">Today 28th Sept</p>
+              <div>
+                <span class="material-icons-outlined"> wb_twilight </span>
+                <span class="layout__sidebar-time">19:32</span>
+              </div>
+            </div>
+          </div>
+          <div class="layout__sidebar-weather-banner">
+            <h1 class="layout__sidebar-weather-banner-celcius">27°</h1>
+            <p class="layout__sidebar-weather-banner-climate">
+              <span class="material-icons-outlined"> light_mode </span>
+              Sunny
+            </p>
+            <button class="layout__sidebar-banner-prev-btn banner--btn">
+              <span class="material-icons-outlined"> navigate_before </span>
+            </button>
+            <button class="layout__sidebar-banner-next-btn banner--btn">
+              <span class="material-icons-outlined"> navigate_next </span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Layout main -->
+        <div class="layout__main">
+          <div class="layout__main-top">
+            <div class="layout_main-top-info">
+              <h3 class="layout__main-title">Welcome back isabella!</h3>
+              <p class="layout__main-text">
+                check out today's weathers information
+              </p>
+            </div>
+            <div class="layout__main-profile">
+              <div class="layout__main-dots">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+              </div>
+              <img
+                src="./asset/images/profile.jpg"
+                alt=""
+                class="layout_main-profile-img"
+                width="40px"
+                height="40px"
+              />
+            </div>
+          </div>
+
+          <div class="layout__main-weather-banner">
+            <div class="layout__main-weather-banner-top">
+              <h3 class="layout__main-weather-info-title">upcoming hours</h3>
+              <div class="layout__main-weather-info-btns">
+                <button
+                  disabled
+                  class="layout__main-weather-info-rain-btn main--btn"
+                >
+                  Rain precipitaion
+                  <span class="material-icons-outlined">
+                    keyboard_arrow_down
+                  </span>
+                </button>
+                <button class="layout__main-weather-info-day-btn main--btn">
+                  next days
+                  <span class="material-icons-outlined">
+                    keyboard_arrow_right
+                  </span>
+                </button>
+              </div>
+            </div>
+
+            <!-- weather chart -->
+            <div class="layout__main-weather-chart">
+              <!-- info-1 -->
+              <div class="layout__main-weather-chart-info">
+                <p class="layout__main-weather-chart-time active">Now</p>
+                <span class="material-icons-outlined"> wb_sunny </span>
+                <p class="layout__main-weather-chart-temp">29°</p>
+                <div class="layout__main-weather-chart-line"></div>
+                <p class="layout__main-weather-chart-percentage">20%</p>
+              </div>
+              <!-- info-2 -->
+              <div class="layout__main-weather-chart-info">
+                <p class="layout__main-weather-chart-time">11:00</p>
+                <span class="material-icons-outlined"> cloud </span>
+                <p class="layout__main-weather-chart-temp">29°</p>
+                <div class="layout__main-weather-chart-line"></div>
+                <p class="layout__main-weather-chart-percentage">29%</p>
+              </div>
+              <!-- info-3 -->
+              <div class="layout__main-weather-chart-info">
+                <p class="layout__main-weather-chart-time">12:00</p>
+                <span class="material-icons-outlined"> wb_sunny </span>
+                <p class="layout__main-weather-chart-temp">29°</p>
+                <div class="layout__main-weather-chart-line"></div>
+                <p class="layout__main-weather-chart-percentage">35%</p>
+              </div>
+              <!-- info-4 -->
+              <div class="layout__main-weather-chart-info">
+                <p class="layout__main-weather-chart-time">13:00</p>
+                <span class="material-icons-outlined"> wb_sunny </span>
+                <p class="layout__main-weather-chart-temp">29°</p>
+                <div class="layout__main-weather-chart-line"></div>
+                <p class="layout__main-weather-chart-percentage">40%</p>
+              </div>
+              <!-- info-5 -->
+              <div class="layout__main-weather-chart-info">
+                <p class="layout__main-weather-chart-time">14:00</p>
+                <span class="material-icons-outlined"> cloud </span>
+                <p class="layout__main-weather-chart-temp">29°</p>
+                <div class="layout__main-weather-chart-line"></div>
+                <p class="layout__main-weather-chart-percentage">53%</p>
+              </div>
+              <!-- info-6 -->
+              <div class="layout__main-weather-chart-info">
+                <p class="layout__main-weather-chart-time">15:00</p>
+                <span class="material-icons-outlined"> cloud </span>
+                <p class="layout__main-weather-chart-temp">29°</p>
+                <div class="layout__main-weather-chart-line"></div>
+                <p class="layout__main-weather-chart-percentage">75%</p>
+              </div>
+              <!-- info-7 -->
+              <div class="layout__main-weather-chart-info">
+                <p class="layout__main-weather-chart-time">16:00</p>
+                <span class="material-icons-outlined"> cloud </span>
+                <p class="layout__main-weather-chart-temp">29°</p>
+                <div class="layout__main-weather-chart-line"></div>
+                <p class="layout__main-weather-chart-percentage">80%</p>
+              </div>
+              <!-- info-8 -->
+              <div class="layout__main-weather-chart-info">
+                <p class="layout__main-weather-chart-time">17:00</p>
+                <span class="material-icons-outlined"> wb_sunny </span>
+                <p class="layout__main-weather-chart-temp">29°</p>
+                <div class="layout__main-weather-chart-line"></div>
+                <p class="layout__main-weather-chart-percentage">90%</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="layout__main-card-container">
+            <h3 class="layout__main-card-main-title">
+              more details of today's weather
+            </h3>
+
+            <div class="layout__main-cards">
+              <!-- card-1 -->
+              <div class="layout__main-card">
+                <div class="layout__main-card-top">
+                  <h5 class="layout__main-card-title">Humidity</h5>
+                  <span class="material-icons-outlined"> water_drop </span>
+                </div>
+                <h3 class="layout__main-card-weather-percentage">
+                  82% <span>bad</span>
+                </h3>
+                <div class="layout__main-card-weather-types">
+                  <div class="layout__main-card-weather-type">
+                    <p class="layout__main-card-weather-type-title">Good</p>
+                    <div class="layout__main-card-weather-bar-medium">
+                      <div style="width: 100%"></div>
+                    </div>
+                  </div>
+                  <div class="layout__main-card-weather-type">
+                    <p class="layout__main-card-weather-type-title">normal</p>
+                    <div class="layout__main-card-weather-bar-medium">
+                      <div style="width: 100%"></div>
+                    </div>
+                  </div>
+                  <div class="layout__main-card-weather-type">
+                    <p class="layout__main-card-weather-type-title">bad</p>
+                    <div class="layout__main-card-weather-bar-medium">
+                      <div style="width: 50%"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- card-2 -->
+              <div class="layout__main-card">
+                <div class="layout__main-card-top">
+                  <h5 class="layout__main-card-title">Wind</h5>
+                  <span class="material-icons-outlined"> air </span>
+                </div>
+                <h3 class="layout__main-card-weather-percentage">8Km/h</h3>
+                <div class="layout__main-card-weather-types">
+                  <div class="layout__main-card-weather-type">
+                    <p class="layout__main-card-weather-type-title">10km/h</p>
+                    <div class="layout__main-card-weather-bar-medium">
+                      <div style="width: 100%"></div>
+                    </div>
+                  </div>
+                  <div class="layout__main-card-weather-type">
+                    <p class="layout__main-card-weather-type-title">50km/h</p>
+                    <div class="layout__main-card-weather-bar-medium">
+                      <div style="width: 100%"></div>
+                    </div>
+                  </div>
+                  <div class="layout__main-card-weather-type">
+                    <p class="layout__main-card-weather-type-title">8km/h</p>
+                    <div class="layout__main-card-weather-bar-medium">
+                      <div style="width: 50%"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- card-3 -->
+              <div class="layout__main-card">
+                <div class="layout__main-card-top">
+                  <h5 class="layout__main-card-title">Humidity</h5>
+                  <span class="material-icons-outlined"> thunderstorm </span>
+                </div>
+                <h3 class="layout__main-card-weather-percentage">1.4cm</h3>
+                <div class="layout__main-card-weather-types">
+                  <div class="layout__main-card-weather-type">
+                    <p class="layout__main-card-weather-precipitation">10</p>
+                    <div class="layout__main-card-weather-bar-small">
+                      <div style="width: 100%"></div>
+                    </div>
+                  </div>
+                  <div class="layout__main-card-weather-type">
+                    <p class="layout__main-card-weather-precipitation">20</p>
+                    <div class="layout__main-card-weather-bar-small">
+                      <div style="width: 80%"></div>
+                    </div>
+                  </div>
+                  <div class="layout__main-card-weather-type">
+                    <p class="layout__main-card-weather-precipitation">30</p>
+                    <div class="layout__main-card-weather-bar-small">
+                      <div style="width: 0%"></div>
+                    </div>
+                  </div>
+                  <div class="layout__main-card-weather-type">
+                    <p class="layout__main-card-weather-precipitation">40</p>
+                    <div class="layout__main-card-weather-bar-small">
+                      <div style="width: 0%"></div>
+                    </div>
+                  </div>
+                  <div class="layout__main-card-weather-type">
+                    <p class="layout__main-card-weather-precipitation">50</p>
+                    <div class="layout__main-card-weather-bar-small">
+                      <div style="width: 0%"></div>
+                    </div>
+                  </div>
+                  <div class="layout__main-card-weather-type">
+                    <p class="layout__main-card-weather-precipitation">60</p>
+                    <div class="layout__main-card-weather-bar-small">
+                      <div style="width: 0%"></div>
+                    </div>
+                  </div>
+                  <div class="layout__main-card-weather-type">
+                    <p class="layout__main-card-weather-precipitation">70</p>
+                    <div class="layout__main-card-weather-bar-small">
+                      <div style="width: 0%"></div>
+                    </div>
+                  </div>
+                  <div class="layout__main-card-weather-type">
+                    <p class="layout__main-card-weather-precipitation">80</p>
+                    <div class="layout__main-card-weather-bar-small">
+                      <div style="width: 0%"></div>
+                    </div>
+                  </div>
+                  <div class="layout__main-card-weather-type">
+                    <p class="layout__main-card-weather-precipitation">90</p>
+                    <div class="layout__main-card-weather-bar-small">
+                      <div style="width: 0%"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- card-4 -->
+              <div class="layout__main-card">
+                <div class="layout__main-card-top">
+                  <h5 class="layout__main-card-title">UV index</h5>
+                  <span class="material-icons-outlined"> wb_sunny </span>
+                </div>
+                <h3 class="layout__main-card-weather-percentage">4 medium</h3>
+                <div class="layout__main-card-weather-types">
+                  <div class="layout__main-card-weather-type">
+                    <p class="layout__main-card-weather-type-index">0-2</p>
+                    <div class="layout__main-card-weather-bar-average">
+                      <div style="width: 100%"></div>
+                    </div>
+                  </div>
+                  <div class="layout__main-card-weather-type">
+                    <p class="layout__main-card-weather-type-index">3-5</p>
+                    <div class="layout__main-card-weather-bar-average">
+                      <div style="width: 50%"></div>
+                    </div>
+                  </div>
+                  <div class="layout__main-card-weather-type">
+                    <p class="layout__main-card-weather-type-index">6-7</p>
+                    <div class="layout__main-card-weather-bar-average">
+                      <div style="width: 0%"></div>
+                    </div>
+                  </div>
+                  <div class="layout__main-card-weather-type">
+                    <p class="layout__main-card-weather-type-index">8-10</p>
+                    <div class="layout__main-card-weather-bar-average">
+                      <div style="width: 0%"></div>
+                    </div>
+                  </div>
+                  <div class="layout__main-card-weather-type">
+                    <p class="layout__main-card-weather-type-index">11+</p>
+                    <div class="layout__main-card-weather-bar-average">
+                      <div style="width: 0%"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- card-5 -->
+              <div class="layout__main-card">
+                <div class="layout__main-card-top">
+                  <h5 class="layout__main-card-title">Feels like</h5>
+                  <span class="material-icons-outlined"> thermostat </span>
+                </div>
+                <h3 class="layout__main-card-weather-percentage">30°</h3>
+                <div class="layout__main-card-weather-types">
+                  <div class="layout__main-card-weather-type">
+                    <p class="layout__main-card-weather-type-title">0°</p>
+                  </div>
+                  <div class="layout__main-card-weather-type">
+                    <p class="layout__main-card-weather-type-title">25°</p>
+                  </div>
+                  <div class="layout__main-card-weather-type">
+                    <p class="layout__main-card-weather-type-title">50°</p>
+                  </div>
+                </div>
+                <div class="layout__main-card-weather-bar-large">
+                  <div style="width: 100%"></div>
+                </div>
+              </div>
+
+              <!-- card-6 -->
+              <div class="layout__main-card">
+                <div class="layout__main-card-top">
+                  <h5 class="layout__main-card-title">Chance of rain</h5>
+                  <span class="material-icons-outlined"> umbrella </span>
+                </div>
+                <h3 class="layout__main-card-weather-percentage">42%</h3>
+                <div class="layout__main-card-weather-types">
+                  <div class="layout__main-card-weather-type">
+                    <p class="layout__main-card-weather-type-title">0°</p>
+                  </div>
+                  <div class="layout__main-card-weather-type">
+                    <p class="layout__main-card-weather-type-title">25°</p>
+                  </div>
+                  <div class="layout__main-card-weather-type">
+                    <p class="layout__main-card-weather-type-title">50°</p>
+                  </div>
+                  <div class="layout__main-card-weather-type">
+                    <p class="layout__main-card-weather-type-title">75°</p>
+                  </div>
+                  <div class="layout__main-card-weather-type">
+                    <p class="layout__main-card-weather-type-title">100°</p>
+                  </div>
+                </div>
+                <div class="layout__main-card-weather-bar-large">
+                  <div style="width: 100%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
